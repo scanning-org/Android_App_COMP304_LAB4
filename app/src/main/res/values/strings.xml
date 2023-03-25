@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Airline Schedule</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="airline_name">Airline Name</string>
+    <string name="arrival_time">Arrival Time</string>
+    <string name="terminal_number">Terminal Number</string>
+</resources>
