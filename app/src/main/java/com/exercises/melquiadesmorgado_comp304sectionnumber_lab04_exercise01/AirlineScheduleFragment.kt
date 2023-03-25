@@ -40,14 +40,14 @@ class AirlineScheduleFragment : Fragment() {
     ): View? {
         _binding = FragmentAirlineScheduleBinding.inflate(inflater, container, false)
         val view = binding.root
-        Log.d("DEBUG-FRAGMENT", "Inside onCreateView - AirlineScheduleFragment")
+        Log.d("DEBUG-FRAGMENT", "1 - Inside onCreateView - AirlineScheduleFragment")
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerView
-        Log.d("DEBUG-FRAGMENT", "Inside onViewCreateView - AirlineScheduleFragment- After binding RecyclerView")
+        Log.d("DEBUG-FRAGMENT", "2 - Inside onViewCreateView - AirlineScheduleFragment- After binding RecyclerView")
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val airlineScheduleAdapter = AirlineScheduleAdapter({
             val action = AirlineScheduleFragmentDirections
@@ -59,7 +59,7 @@ class AirlineScheduleFragment : Fragment() {
         recyclerView.adapter = airlineScheduleAdapter
         lifecycle.coroutineScope.launch {
             viewModel.fullSchedule().collect() {
-                Log.d("DEBUG-FRAGMENT", "Inside Adapter - AirlineScheduleFragment")
+                Log.d("DEBUG-FRAGMENT", "Submitting list of size: ${it.size}")
                 airlineScheduleAdapter.submitList(it)
             }
         }

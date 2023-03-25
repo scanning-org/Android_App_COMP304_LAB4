@@ -1,6 +1,7 @@
 package com.exercises.melquiadesmorgado_comp304sectionnumber_lab04_exercise01.database
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -12,7 +13,7 @@ import com.exercises.melquiadesmorgado_comp304sectionnumber_lab04_exercise01.dat
  * Version is incremented as new tables/columns are added/removed/changed.
  * You can optionally use this class for one-time setup, such as pre-populating a database.
  */
-@Database(entities = arrayOf(Schedule::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Schedule::class), version = 2, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun scheduleDao(): ScheduleDao
 
@@ -27,9 +28,9 @@ abstract class AppDatabase: RoomDatabase() {
                     AppDatabase::class.java,
                     "app_database")
                     .createFromAsset("database/airline_schedule.db")
+                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
-
                 instance
             }
         }

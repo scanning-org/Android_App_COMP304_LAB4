@@ -5,4 +5,5 @@
     <string name="airline_name">Airline Name</string>
     <string name="arrival_time">Arrival Time</string>
     <string name="terminal_number">Terminal Number</string>
+    <string name="status">Status</string>
 </resources>

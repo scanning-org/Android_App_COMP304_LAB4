@@ -16,5 +16,4 @@ interface ScheduleDao {
 
     @Query("SELECT * FROM schedule WHERE airline_name = :airlineName ORDER BY arrival_time ASC")
     fun getByAirlineName(airlineName: String): Flow<List<Schedule>>
-
 }

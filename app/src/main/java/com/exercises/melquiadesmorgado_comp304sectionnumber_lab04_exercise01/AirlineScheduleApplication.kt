@@ -5,4 +5,5 @@ import com.exercises.melquiadesmorgado_comp304sectionnumber_lab04_exercise01.dat
 
 class AirlineScheduleApplication: Application() {
     val database: AppDatabase by lazy { AppDatabase.getDatabase(this) }
+
 }
